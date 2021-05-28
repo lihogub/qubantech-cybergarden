@@ -1,13 +1,13 @@
-package ru.lihogub.babystepapp;
+package ru.lihogub.babystep;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BabystepappApplication {
+public class BabyStepApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BabystepappApplication.class, args);
+		SpringApplication.run(BabyStepApplication.class, args);
 	}
 
 }
