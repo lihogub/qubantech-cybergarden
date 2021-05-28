@@ -18,4 +18,10 @@ public class Child {
     private String name;
     @Column(nullable = false)
     private Date birth;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "child_parent",
+            joinColumns = {@JoinColumn(name = "child_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "parent_id", referencedColumnName = "id")})
+    private List<Parent> parents;
 }
