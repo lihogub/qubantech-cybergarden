@@ -14,6 +14,12 @@ const Menu = () => {
             <LinkContainer to='/about'>
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
+            <LinkContainer to='/test'>
+              <Nav.Link>Test</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/test2'>
+              <Nav.Link>Test2</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
