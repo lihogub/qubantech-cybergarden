@@ -11,10 +11,10 @@
 	<groupId>ru.lihogub</groupId>
 	<artifactId>babystepapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>babystepapp</name>
+	<name>babystep</name>
 	<description>Baby Step application.</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
