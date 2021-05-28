@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Test from './pages/Test'
 import NotFound from './pages/NotFound'
+import Test2 from "./pages/Test2";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path='/' component={Home} exact />
             <Route path='/about' component={About} />
             <Route path='/test' component={Test} />
+            <Route path='/test2' component={Test2} />
             <Route component={NotFound} />
           </Switch>
         </Container>
