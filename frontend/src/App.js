@@ -1,33 +1,27 @@
-import { Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// page components
-import Menu from './components/Menu'
-import Footer from './components/Footer'
-// pages
-import Home from './pages/Home'
-import About from './pages/About'
-import Test from './pages/Test'
-import NotFound from './pages/NotFound'
-import Test2 from "./pages/Test2";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import SignUp from './pages/SignUp.jsx'
+import Login from './pages/Login.jsx'
+import NotFound from './pages/NotFound.jsx'
+import About from './pages/About.jsx'
 
-const App = () => {
+import axios from 'axios'
+
+
+function App() {
   return (
-    <Router>
-      <Menu />
-      <main>
-        <Container>
+      <Router>
+          <Link to="/">Home</Link>
+          <Link to="/signup">Sign up</Link>
+          <Link to="/login">Login</Link>
           <Switch>
-            <Route path='/' component={Home} exact />
-            <Route path='/about' component={About} />
-            <Route path='/test' component={Test} />
-            <Route path='/test2' component={Test2} />
-            <Route component={NotFound} />
+              <Route path='/' component={About} exact />
+              <Route path='/signup' component={SignUp} />
+              <Route path='/login' component={Login} />
+              <Route component={NotFound} />
           </Switch>
-        </Container>
-      </main>
-      <Footer />
-    </Router>
-  )
+      </Router>
+  );
 }
 
-export default App
+export default App;
