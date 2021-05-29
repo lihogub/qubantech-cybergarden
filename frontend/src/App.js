@@ -5,11 +5,7 @@ import Profile from './pages/Profile'
 import Dialogs from './pages/Dialogs'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
-
-import axios from 'axios'
-import Navbar from "./components/Navigation";
 import Navigation from "./components/Navigation";
-
 
 function App() {
   return (

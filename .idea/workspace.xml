@@ -22,8 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b16fbff-2f42-41eb-9438-da4d74256893" name="Default Changelist" comment="">
+    <list default="true" id="3b16fbff-2f42-41eb-9438-da4d74256893" name="Default Changelist" comment="profile back gradient avatar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tailwind.config.js" afterDir="false" />
     </list>
@@ -41,6 +43,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -95,7 +102,7 @@
       <workItem from="1622204422859" duration="1719000" />
       <workItem from="1622229476247" duration="99000" />
       <workItem from="1622229607719" duration="30000" />
-      <workItem from="1622265516106" duration="1802000" />
+      <workItem from="1622265516106" duration="13836000" />
     </task>
     <task id="LOCAL-00001" summary="added Child model">
       <created>1622211027064</created>
@@ -111,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622211342116</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="profile back gradient avatar">
+      <created>1622267810333</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622267810333</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +147,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added Child model" />
     <MESSAGE value="added Child Parent binding" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Child Parent binding" />
+    <MESSAGE value="profile back gradient avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile back gradient avatar" />
   </component>
 </project>
