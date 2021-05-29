@@ -1,8 +1,7 @@
-import React from "react";
-import Navbar from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
+import React from 'react';
+import Header from "../components/Header";
 
-{/*const axios = require('axios');
+const axios = require('axios');
 let temp;
 
 // Make a request for a user with a given ID
@@ -17,75 +16,47 @@ axios.get({
     .catch((error) => {
         console.log(error);
     })
-    .then(() => {}); */}
+    .then(() => {});
 
 export default function Profile() {
     return (
         <>
-            <Navbar transparent />
             <main className="profile-page">
                 <section className="relative block" style={{ height: "500px" }}>
                     <div
-                        className="absolute top-0 w-full h-full bg-center bg-cover"
-                        style={{
-                            backgroundImage:
-                                "url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80')"
-                        }}
+                        className="absolute top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."
                     >
-            <span
-                id="blackOverlay"
-                className="w-full h-full absolute opacity-50 bg-black"
-            ></span>
                     </div>
-                    <div
-                        className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-                        style={{ height: "70px" }}
-                    >
-                        <svg
-                            className="absolute bottom-0 overflow-hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="none"
-                            version="1.1"
-                            viewBox="0 0 2560 100"
-                            x="0"
-                            y="0"
-                        >
-                            <polygon
-                                className="text-gray-300 fill-current"
-                                points="2560 0 2560 100 0 100"
-                            ></polygon>
-                        </svg>
-                    </div>
+
                 </section>
-                <section className="relative py-16 bg-gray-300">
+                <section className="relative py-4 bg-white">
                     <div className="container mx-auto px-4">
-                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl -mt-64 rounded-lg">
+                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-96">
                             <div className="px-6">
                                 <div className="flex flex-wrap justify-center">
                                     <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                                         <div className="relative">
-                                            <img
-                                                alt="..."
-                                                src={'https://images.unsplash.com/photo-1578496480157-697fc14d2e55?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'}
-                                                className="shadow-xl founded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
-                                                style={{ maxWidth: "150px" }}
-                                            />
+                                            <a href="#" className="block relative">
+                                                <img alt="profil" src="https://i.redd.it/v0caqchbtn741.jpg"
+                                                     className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>
+                                            </a>
                                         </div>
                                     </div>
+        {temp}
                                 </div>
-                                <div className="text-center mt-12 mb-2">
-                                    <h3 className="text-4xl font-semibold leading-normal mb-0 text-gray-800">
-                                        FIRST LAST NAME
+                                <div className="text-center mt-12  mb-2">
+                                    <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
+                                        Ivan Ivanov
                                     </h3>
-                                    <div className="text-sm leading-normal mt-0 mb-0 text-gray-500 font-normal uppercase">
-                                        <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
+                                    <div className="text-sm leading-normal -mt-4 mb-0 text-gray-500 font-normal uppercase">
+                                        <i className="fas fa-map-marker-alt mr-2 text-text-base text-gray-500"></i>{" "}
                                         @USERNAME
                                     </div>
-                                    <div className="text-sm leading-normal mt-6 mb-2 text-black-500 font-semibold uppercase">
+                                    <div className="text-sm leading-normal mt-6 mb-2 text-gray-800 font-medium uppercase">
                                         <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
-                                        Специальность: матобесссссссссс
+                                        Специальность: матобес
                                     </div>
-                                    <div className="text-sm leading-normal mt-0 mb-4 text-black-500 font-semibold uppercase">
+                                    <div className="text-sm leading-normal -mt-2 mb-4 text-gray-800 font-medium uppercase">
                                         <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
                                         Дата рождения: 20.01.2000
                                     </div>
@@ -105,43 +76,12 @@ export default function Profile() {
                                             </div>
                                         </div>
                                     </div>
-                                    {/*<div className="mb-2 border-t border-gray-300"></div>
-                                    <div>
-                                        <div className=" grid grid-cols-2 md:w-1/2 mx-auto gap-x-2 md:gap-x-4 overflow-hidden truncate text-right mb-10">
-                                            <div>birthdate</div> <div className="text-left">null</div>
-                                            <div>block</div> <div className="text-left">3</div>
-                                            <div>Специальность: </div > <div className="text-left">Мат.обеспечениеssss </div>
-                                            <div>Комната: </div> <div className="text-left">321</div>
-                                            <div>Этаж: </div> <div className="text-left">3 </div>
-                                        </div>
-                                    </div>*/}
                                 </div>
-                                {/*<div className="mt-10 py-10 border-t border-gray-300 text-center">
-                                    <div className="flex flex-wrap justify-center">
-                                        <div className="w-full lg:w-9/12 px-4">
-                                            <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                                                An artist of considerable range, Jenna the name taken by
-                                                Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                                                performs and records all of his own music, giving it a
-                                                warm, intimate feel with a solid groove structure. An
-                                                artist of considerable range.
-                                            </p>
-                                            <a
-                                                href="#pablo"
-                                                className="font-normal text-pink-500"
-                                                onClick={e => e.preventDefault()}
-                                            >
-                                                Show more
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>*/}
                             </div>
                         </div>
                     </div>
                 </section>
             </main>
-            <Footer />
         </>
     );
 }
