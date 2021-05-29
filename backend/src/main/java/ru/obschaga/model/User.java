@@ -37,6 +37,18 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "chat_id", referencedColumnName = "id")})
     private List<Chat> chats;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_following",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "following_id", referencedColumnName = "id")})
+    private List<User> following;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_following",
+            joinColumns = {@JoinColumn(name = "following_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
+    private List<User> followers;
+
     public User(User user) {
         this.id = user.id;
         this.username = user.username;
@@ -54,5 +66,29 @@ public class User {
         this.credentialsNonExpired = user.credentialsNonExpired;
         this.enabled = user.enabled;
         this.chats = user.chats;
+    }
+
+    public User(Long id, String username, String password, String firstname,
+                String lastname, String avatar, Date birthday, Housing housing,
+                Long floor, Long room, String block, String specialization,
+                boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired,
+                boolean enabled, List<Chat> chats) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.avatar = avatar;
+        this.birthday = birthday;
+        this.housing = housing;
+        this.floor = floor;
+        this.room = room;
+        this.block = block;
+        this.specialization = specialization;
+        this.accountNonExpired = accountNonExpired;
+        this.accountNonLocked = accountNonLocked;
+        this.credentialsNonExpired = credentialsNonExpired;
+        this.enabled = enabled;
+        this.chats = chats;
     }
 }

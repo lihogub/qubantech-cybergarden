@@ -13,17 +13,19 @@ import ru.obschaga.service.UserService;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/user")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/")
-    ResponseEntity<?> getMe(Authentication authentication) {
-        User user = (User) authentication.getPrincipal();
+    @GetMapping("/{currentUserId}")
+    ResponseEntity<?> getMe(@PathVariable Long currentUserId) throws UserNotFoundException {
+        User user = userService.getUserById(currentUserId);
         return ResponseEntity.ok(new UserDto(user));
     }
 
-    @GetMapping("/{userId}")
-    ResponseEntity<?> getUser(@PathVariable Long userId) throws UserNotFoundException {
+    @GetMapping("/{currentUserId}/{userId}")
+    ResponseEntity<?> getUser(@PathVariable Long currentUserId,
+                              @PathVariable Long userId) throws UserNotFoundException {
         return ResponseEntity.ok(new UserDto(userService.getUserById(userId)));
     }
 
