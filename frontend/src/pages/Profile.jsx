@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
+import Navigation from "../components/Navigation";
 
 {/*const axios = require('axios');
 let temp;
