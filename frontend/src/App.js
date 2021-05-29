@@ -5,13 +5,12 @@ import Profile from './pages/Profile'
 import Dialogs from './pages/Dialogs'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
       <Router>
-          <Link to="/">Home</Link>
-          <Link to="/profile">Profile</Link>
-          <Link to="/dialogs">Dialogs</Link>
+          <Navigation/>
           <Switch>
               <Route path='/' component={About} exact />
               <Route path='/profile' component={Profile} />
