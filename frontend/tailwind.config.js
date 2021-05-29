@@ -7,8 +7,15 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
+      fontFamily: {
+        'sans': [ 'system-ui', 'ui-sans-serif'],
+        'serif': ['Georgia','ui-serif'],
+      },
+      blue: {
+        DEFAULT: '#5F7EA7',
+      },
       purple:{
-        DEFAULT: '#5E54F0',
+        DEFAULT: '#C9E5F0',
         secondary: '#272727',
       },
       black: {
@@ -18,9 +25,11 @@ module.exports = {
       gray:{
         800: '#535353',
         700: '#666666',
-        500: '#ACACAC',
-        300: '#E7E7E7',
-        ultralight: '#EEEEEE',
+        500: 'rgba(55, 65, 81)',
+        400: "rgba(156, 163, 175)",
+        300: "rgba(209, 213, 219)",
+        200: "rgba(229, 231, 235)",
+        100: "rgba(243, 244, 246)",
       },
       white:{
         DEFAULT: '#FFFFFF',

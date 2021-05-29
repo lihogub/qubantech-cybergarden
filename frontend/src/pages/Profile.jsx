@@ -45,33 +45,33 @@ export default function Profile() {
         {temp}
                                 </div>
                                 <div className="text-center mt-12  mb-2">
-                                    <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
+                                    <h3 className="text-4xl font-semibold leading-normal mb-2 text-black-secondary mb-2">
                                         Ivan Ivanov
                                     </h3>
                                     <div className="text-sm leading-normal -mt-4 mb-0 text-gray-500 font-normal uppercase">
-                                        <i className="fas fa-map-marker-alt mr-2 text-text-base text-gray-500"></i>{" "}
+                                        <i className="fas fa-map-marker-alt mr-2 text-text-base text-gray-400"></i>{" "}
                                         @USERNAME
                                     </div>
                                     <div className="text-sm leading-normal mt-6 mb-2 text-gray-800 font-medium uppercase">
-                                        <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
-                                        Специальность: матобес
+                                        <i className="fas fa-map-marker-alt mr-2 text-base "></i>{" "}
+                                        Специальность: <span className="text-gray-700">матобес</span>
                                     </div>
                                     <div className="text-sm leading-normal -mt-2 mb-4 text-gray-800 font-medium uppercase">
-                                        <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
-                                        Дата рождения: 20.01.2000
+                                        <i className="fas fa-map-marker-alt mr-2 text-base"></i>{" "}
+                                        Дата рождения: <span className="text-gray-700">20.01.2000</span>
                                     </div>
                                     <div className="mt-5 border-t border-gray-300 container px-2 py-10 mx-auto">
                                         <div className="flex flex-wrap -m-4 text-center">
                                             <div className="p-4 sm:w-1/3 w-1/2">
-                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">2</h2>
+                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-black-secondary">2</h2>
                                                 <p className="leading-relaxed">Этаж</p>
                                             </div>
                                             <div className="p-4 sm:w-1/3 w-1/2">
-                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">4</h2>
+                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-black-secondary">4</h2>
                                                 <p className="leading-relaxed">Блок</p>
                                             </div>
                                             <div className="p-4 sm:w-1/3 w-full">
-                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">228</h2>
+                                                <h2 className="title-font font-medium sm:text-4xl text-3xl text-black-secondary">228</h2>
                                                 <p className="leading-relaxed">Комната</p>
                                             </div>
                                         </div>
