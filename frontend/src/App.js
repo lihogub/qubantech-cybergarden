@@ -6,9 +6,6 @@ import Dialogs from './pages/Dialogs'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 
-import axios from 'axios'
-
-
 function App() {
   return (
       <Router>

@@ -12,9 +12,7 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 public class UserDetailsImpl extends User implements UserDetails {
-    public UserDetailsImpl(User user) {
-        super(user);
-    }
+    public UserDetailsImpl(User user) { super(user); }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
