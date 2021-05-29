@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import ru.obschaga.dto.ChatDto;
 import ru.obschaga.dto.MessageDto;
 import ru.obschaga.exception.ChatNotFoundException;
+import ru.obschaga.exception.UserNotFoundException;
 import ru.obschaga.model.Chat;
 import ru.obschaga.model.Message;
 import ru.obschaga.model.User;
 import ru.obschaga.repository.ChatRepository;
 import ru.obschaga.repository.MessageRepository;
+import ru.obschaga.repository.UserRepository;
+import ru.obschaga.service.UserService;
 
 import java.util.Date;
 import java.util.List;
@@ -24,10 +27,11 @@ import java.util.stream.Collectors;
 public class ChatController {
     private final ChatRepository chatRepository;
     private final MessageRepository messageRepository;
+    private final UserService userService;
 
-    @GetMapping("/")
-    ResponseEntity<?> getChat(Authentication authentication) {
-        User user = (User) authentication.getPrincipal();
+    @GetMapping("/{currentUserId}")
+    ResponseEntity<?> getChat(@PathVariable Long currentUserId) throws UserNotFoundException {
+        User user = userService.getUserById(currentUserId);
         return ResponseEntity.ok(user
                         .getChats()
                         .stream()
@@ -40,10 +44,10 @@ public class ChatController {
         );
     }
 
-    @GetMapping("/{chatId}")
-    ResponseEntity<?> getChatById(Authentication authentication,
-                                  @PathVariable Long chatId) throws ChatNotFoundException {
-        User user = (User) authentication.getPrincipal();
+    @GetMapping("/{currentUserId}/{chatId}")
+    ResponseEntity<?> getChatById(@PathVariable Long currentUserId,
+                                  @PathVariable Long chatId) throws ChatNotFoundException, UserNotFoundException {
+        User user = userService.getUserById(currentUserId);
         if (user.getChats().stream().noneMatch(chat->chat.getId().equals(chatId)))
             throw new ChatNotFoundException();
         return ResponseEntity.ok(chatRepository
@@ -61,11 +65,11 @@ public class ChatController {
         );
     }
 
-    @PostMapping("/{chatId}")
-    ResponseEntity<?> sendMessage(Authentication authentication,
+    @PostMapping("/{currentUserId}/{chatId}")
+    ResponseEntity<?> sendMessage(@PathVariable Long currentUserId,
                                   @PathVariable Long chatId,
-                                  @RequestBody MessageDto messageDto) throws ChatNotFoundException {
-        User user = (User) authentication.getPrincipal();
+                                  @RequestBody MessageDto messageDto) throws ChatNotFoundException, UserNotFoundException {
+        User user =userService.getUserById(currentUserId);
         if (user.getChats().stream().noneMatch(chat->chat.getId().equals(chatId)))
             throw new ChatNotFoundException();
         Message message = messageRepository.save(Message.builder()

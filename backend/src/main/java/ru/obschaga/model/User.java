@@ -55,4 +55,28 @@ public class User {
         this.enabled = user.enabled;
         this.chats = user.chats;
     }
+
+    public User(Long id, String username, String password, String firstname,
+                String lastname, String avatar, Date birthday, Housing housing,
+                Long floor, Long room, String block, String specialization,
+                boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired,
+                boolean enabled, List<Chat> chats) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.avatar = avatar;
+        this.birthday = birthday;
+        this.housing = housing;
+        this.floor = floor;
+        this.room = room;
+        this.block = block;
+        this.specialization = specialization;
+        this.accountNonExpired = accountNonExpired;
+        this.accountNonLocked = accountNonLocked;
+        this.credentialsNonExpired = credentialsNonExpired;
+        this.enabled = enabled;
+        this.chats = chats;
+    }
 }
