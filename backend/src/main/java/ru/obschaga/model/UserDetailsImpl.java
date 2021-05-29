@@ -20,4 +20,9 @@ public class UserDetailsImpl extends User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
     }
+
+    @Override
+    public String toString() {
+        return "UserDetailsImpl{} " + super.toString();
+    }
 }

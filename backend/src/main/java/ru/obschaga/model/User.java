@@ -2,10 +2,10 @@ package ru.obschaga.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.obschaga.dto.UserDto;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity(name = "usr")
@@ -31,6 +31,12 @@ public class User {
     private boolean credentialsNonExpired;
     private boolean enabled;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "chat_usr",
+            joinColumns = {@JoinColumn(name = "usr_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "chat_id", referencedColumnName = "id")})
+    private List<Chat> chats;
+
     public User(User user) {
         this.id = user.id;
         this.username = user.username;
@@ -47,5 +53,6 @@ public class User {
         this.accountNonLocked = user.accountNonLocked;
         this.credentialsNonExpired = user.credentialsNonExpired;
         this.enabled = user.enabled;
+        this.chats = user.chats;
     }
 }
