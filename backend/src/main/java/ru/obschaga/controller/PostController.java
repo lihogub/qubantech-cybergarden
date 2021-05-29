@@ -1,6 +1,5 @@
 package ru.obschaga.controller;
 
-import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +9,8 @@ import ru.obschaga.model.Image;
 import ru.obschaga.model.Post;
 import ru.obschaga.repository.ImageRepository;
 import ru.obschaga.repository.PostRepository;
-import ru.obschaga.repository.UserRepository;
 import ru.obschaga.service.UserService;
 
-import javax.imageio.ImageReader;
 import java.util.*;
 import java.util.stream.Collectors;
 

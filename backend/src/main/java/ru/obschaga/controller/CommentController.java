@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.obschaga.dto.CommentDto;
 import ru.obschaga.model.Comment;
 import ru.obschaga.model.Post;
-import ru.obschaga.model.User;
 import ru.obschaga.repository.CommentRepository;
 import ru.obschaga.repository.PostRepository;
 import ru.obschaga.repository.UserRepository;

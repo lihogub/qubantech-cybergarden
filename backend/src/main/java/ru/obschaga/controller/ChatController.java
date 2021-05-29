@@ -3,7 +3,6 @@ package ru.obschaga.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import ru.obschaga.dto.ChatDto;
 import ru.obschaga.dto.MessageDto;
@@ -14,11 +13,9 @@ import ru.obschaga.model.Message;
 import ru.obschaga.model.User;
 import ru.obschaga.repository.ChatRepository;
 import ru.obschaga.repository.MessageRepository;
-import ru.obschaga.repository.UserRepository;
 import ru.obschaga.service.UserService;
 
 import java.util.Date;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -69,7 +66,7 @@ public class ChatController {
     ResponseEntity<?> sendMessage(@PathVariable Long currentUserId,
                                   @PathVariable Long chatId,
                                   @RequestBody MessageDto messageDto) throws ChatNotFoundException, UserNotFoundException {
-        User user =userService.getUserById(currentUserId);
+        User user = userService.getUserById(currentUserId);
         if (user.getChats().stream().noneMatch(chat->chat.getId().equals(chatId)))
             throw new ChatNotFoundException();
         Message message = messageRepository.save(Message.builder()
