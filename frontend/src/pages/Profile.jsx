@@ -30,7 +30,7 @@ class Profile extends React.Component {
     render() {
         return(
             <>
-                <main className="profile-page mb-10">
+                <main className="profile-page md:mt-12">
                     <section className="relative block" style={{ height: "500px" }}>
                         <div
                             className="absolute top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."

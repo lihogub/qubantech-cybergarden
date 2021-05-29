@@ -8,7 +8,7 @@ export default function Dialogs() {
     return (
         <>
             <main className="dialogs-page">
-                <section className="relative block" style={{ height: "50px" }}>
+                <section className="relative block md:mt-12" style={{ height: "50px" }}>
                     <div
                         className="absolute top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."
                     >
@@ -54,7 +54,6 @@ export default function Dialogs() {
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </section>
             </main>
