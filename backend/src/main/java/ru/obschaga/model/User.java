@@ -37,6 +37,18 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "chat_id", referencedColumnName = "id")})
     private List<Chat> chats;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_following",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "following_id", referencedColumnName = "id")})
+    private List<User> following;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_following",
+            joinColumns = {@JoinColumn(name = "following_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
+    private List<User> followers;
+
     public User(User user) {
         this.id = user.id;
         this.username = user.username;
