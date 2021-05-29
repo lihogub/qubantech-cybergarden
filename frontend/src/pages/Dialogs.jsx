@@ -19,8 +19,8 @@ export default function Dialogs() {
                 </section>
                 <section className="relative py-4 mt-8 bg-white">
                     <div className="container mx-auto px-4">
-                        <div className="relative flex flex-col mx-auto w-full items-center justify-center">
-                            <ul className="flex flex-col">
+                        <div className="relative flex flex-col w-full items-center justify-center">
+                            <ul className="w-full">
                                 <li className="border-gray-500 flex flex-row mb-2">
                                     <div
                                         className="shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
@@ -38,8 +38,10 @@ export default function Dialogs() {
                                                 Charlie Moi
                                             </div>
                                         </div>
-
-                                        <button className="w-24 text-right flex justify-end">
+                                        <div className="text-gray-600 dark:text-gray-200 text-xs justify-end">
+                                            6:00 AM
+                                        </div>
+                                        <button className="w-12 text-right flex justify-end">
                                             <svg width="12" fill="currentColor" height="12"
                                                  className="hover:text-gray-800 dark:hover:text-white dark:text-gray-200 text-gray-500"
                                                  viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
