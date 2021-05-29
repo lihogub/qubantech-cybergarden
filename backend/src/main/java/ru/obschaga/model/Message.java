@@ -20,5 +20,7 @@ public class Message {
     private Date timestamp;
     @ManyToOne(fetch = FetchType.LAZY)
     private User author;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Chat chat;
     private String text;
 }

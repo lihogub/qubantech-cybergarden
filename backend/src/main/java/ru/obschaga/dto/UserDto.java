@@ -4,7 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import ru.obschaga.model.User;
 
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +23,9 @@ public class UserDto {
     public final Long room;
     public final Long floor;
     public final String avatar;
+    public final BigDecimal balance;
+    public final Set<Long> followers;
+    public final Set<Long> following;
 
     public UserDto(User user) {
         this.id = user.getId();
@@ -31,5 +38,8 @@ public class UserDto {
         this.room = user.getRoom();
         this.floor = user.getFloor();
         this.avatar = user.getAvatar();
+        this.balance = user.getBalance();
+        this.following = user.getFollowing().stream().map(User::getId).collect(Collectors.toSet());
+        this.followers = user.getFollowers().stream().map(User::getId).collect(Collectors.toSet());
     }
 }

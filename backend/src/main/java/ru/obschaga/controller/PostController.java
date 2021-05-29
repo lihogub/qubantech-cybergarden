@@ -17,12 +17,25 @@ import java.util.stream.Collectors;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/post")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class PostController {
     private final PostRepository postRepository;
     private final UserService userService;
     private final ImageRepository imageRepository;
 
     @GetMapping("/{currentUserId}")
+    ResponseEntity<?> getPosts(@PathVariable Long currentUserId) {
+        List<Post> postList = postRepository.getPostByAuthorId(currentUserId);
+        return ResponseEntity.ok(postList.stream().map(PostDto::new).collect(Collectors.toList()));
+    }
+
+    @GetMapping("/{currentUserId}/{userId}")
+    ResponseEntity<?> getPosts(@PathVariable Long currentUserId, @PathVariable Long userId) {
+        List<Post> postList = postRepository.getPostByAuthorId(userId);
+        return ResponseEntity.ok(postList.stream().map(PostDto::new).collect(Collectors.toList()));
+    }
+
+    @GetMapping("/{currentUserId}/feed")
     ResponseEntity<?> getFeed(@PathVariable Long currentUserId) throws UserNotFoundException {
         Set<Post> feedSet = new HashSet<>();
         userService
@@ -54,7 +67,7 @@ public class PostController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{currentUserId}/{postId}")
+    @GetMapping("/{currentUserId}/post/{postId}")
     ResponseEntity<?> getPost(@PathVariable Long currentUserId, @PathVariable Long postId) {
         return ResponseEntity.ok(new PostDto(postRepository.findById(postId).orElseThrow()));
     }

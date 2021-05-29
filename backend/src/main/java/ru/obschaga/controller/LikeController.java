@@ -11,11 +11,12 @@ import ru.obschaga.repository.UserRepository;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/like")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class LikeController {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
-    @GetMapping("/{currentUserId/{postId}")
+    @GetMapping("/{currentUserId}/{postId}")
     ResponseEntity<?> isLiked(@PathVariable Long currentUserId, @PathVariable Long postId) {
         Post post = postRepository.getById(postId);
         return ResponseEntity.ok(post

@@ -15,6 +15,7 @@ import java.util.Date;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/comment")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class CommentController {
     private final UserRepository userRepository;
     private final PostRepository postRepository;

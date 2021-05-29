@@ -12,6 +12,7 @@ import ru.obschaga.service.UserService;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/follow")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class FollowController {
     private final UserService userService;
     private final UserRepository userRepository;
