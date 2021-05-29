@@ -23,12 +23,18 @@ public class PostDto {
     private Date timestamp;
     private List<String> images;
     private List<Long> likes;
+    private List<CommentDto> comments;
 
     public PostDto(Post post) {
         this.title = post.getTitle();
         this.description = post.getDescription();
         this.author = post.getAuthor().getId();
         this.timestamp = post.getTimestamp();
+        this.comments = post
+                .getComments()
+                .stream()
+                .map(CommentDto::new)
+                .collect(Collectors.toList());
         this.likes = post
                 .getLikes()
                 .stream()

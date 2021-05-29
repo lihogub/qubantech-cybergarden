@@ -13,9 +13,22 @@ import ru.obschaga.repository.UserRepository;
 @RequestMapping("/like")
 public class LikeController {
     private final PostRepository postRepository;
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @PostMapping("/{currentUser/{postId}")
+    @GetMapping("/{currentUserId/{postId}")
+    ResponseEntity<?> isLiked(@PathVariable Long currentUserId, @PathVariable Long postId) {
+        Post post = postRepository.getById(postId);
+        return ResponseEntity.ok(post
+                .getLikes()
+                .stream()
+                .anyMatch(u->u
+                        .getId()
+                        .equals(currentUserId)
+                )
+        );
+    }
+
+    @PostMapping("/{currentUserId}/{postId}")
     ResponseEntity<?> likePost(@PathVariable Long currentUserId, @PathVariable Long postId) {
         Post post = postRepository.getById(postId);
         if (post.getLikes().stream().noneMatch(u->u.getId().equals(currentUserId))) {
@@ -26,7 +39,7 @@ public class LikeController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/{currentUser/{postId}")
+    @DeleteMapping("/{currentUserId}/{postId}")
     ResponseEntity<?> unlikePost(@PathVariable Long currentUserId, @PathVariable Long postId) {
         Post post = postRepository.getById(postId);
         if (post.getLikes().stream().anyMatch(u->u.getId().equals(currentUserId))) {
