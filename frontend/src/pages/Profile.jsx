@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Header from "../components/Header";
-import axios from "./../backendInterface";
-
-let user_id = 2;
+import backendInterface from "./../backendInterface";
 
 class Profile extends React.Component {
 
     componentDidMount() {
 
-        axios.get('http://192.168.1.152:8080/user/' + user_id)
+        backendInterface.axios_.get(backendInterface.session_url + '/user/' + backendInterface.client_user_id)
             .then((response) => {
                 const response_data = response['data'];
 

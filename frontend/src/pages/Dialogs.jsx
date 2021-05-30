@@ -1,17 +1,13 @@
 import React from 'react';
 import Header from "../components/Header";
-
-const axios = require('axios');
-let temp;
+import axios from "./../backendInterface";
 
 export default function Dialogs() {
     return (
         <>
             <main className="dialogs-page">
                 <section className="relative block" style={{ height: "50px" }}>
-                    <div
-                        className="absolute top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."
-                    >
+                    <div className="absolute top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ...">
                         <h1 className="text-4xl font-semibold leading-normal text-gray-900 text-center mt-4">
                             Messages
                         </h1>
