@@ -102,13 +102,13 @@ class Profile extends React.Component {
                                                 </div>
                                                 <div className="p-4 sm:w-1/2 w-full">
                                                     <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                                                        {this.state && this.state.profile.room}
+                                                        {this.state && this.state.profile.followers.length}
                                                     </h2>
                                                     <p className="leading-relaxed">Подписчики</p>
                                                 </div>
                                                 <div className="p-4 sm:w-1/2 w-full">
                                                     <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                                                        {this.state && this.state.profile.room}
+                                                        {this.state && this.state.profile.following.length}
                                                     </h2>
                                                     <p className="leading-relaxed">Подписки</p>
                                                 </div>
@@ -127,10 +127,10 @@ class Profile extends React.Component {
                                                 </div>
                                                 <div className="pl-1 gap-x-3 md:mr-16 text-xl dark:text-white inline-block leading-none">
                                                     <div className="font-medium text-left">
-                                                        First Last nameddddd
+                                                        Иван Иванов
                                                     </div>
                                                     <div className="text-xs text-gray-500 leading-relaxed text-left">
-                                                        @username
+                                                        @petrov
                                                     </div>
                                                 </div>
                                             </div>
@@ -150,10 +150,10 @@ class Profile extends React.Component {
                                                 </div>
                                                 <div className="pl-1 gap-x-3 md:mr-16 text-xl dark:text-white inline-block leading-none">
                                                     <div className="font-medium text-left">
-                                                        First Last nameddddd
+                                                        Анна Сидорова
                                                     </div>
                                                     <div className="text-xs text-gray-500 leading-relaxed text-left">
-                                                        @username
+                                                        @sidorova
                                                     </div>
                                                 </div>
                                             </div>

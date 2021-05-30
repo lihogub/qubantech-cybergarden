@@ -2,11 +2,12 @@ import React from 'react';
 import Header from "../components/Header";
 import itemDialog from "../components/itemDialog";
 import icon from "../icon/plus_dialogs.svg";
+import backendInterface from "./../backendInterface";
 
 class Dialogs extends React.Component {
     componentDidMount() {
 
-        axios.get('http://192.168.1.152:8080/chat/' + user_id)
+        backendInterface.axios_.get('http://192.168.1.152:8080/chat/' + backendInterface.user_id)
             .then((response) => {
                 const response_data = response['data'];
 
@@ -35,8 +36,7 @@ class Dialogs extends React.Component {
                         </h1>
                         <button
                             className="p-4  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">
-                            <img src={icon}
-                            />
+                            <img src={icon}/>
                         </button>
                     </div>
 
