@@ -34,9 +34,7 @@ class Feed extends React.Component{
                             username={element.author}
                             title={element.title}
                             avatar={element.avatar || "https://i.redd.it/v0caqchbtn741.jpg"}
-                            timestamp={element.timestamp.substring(8, 10) + "-"
-                            + element.timestamp.substring(5, 7) + " "
-                            + element.timestamp.substring(11, 16)}
+                            timestamp={element.timestamp}
                             text={element.description}
                             images={element.images}
                             likes={element.likes}

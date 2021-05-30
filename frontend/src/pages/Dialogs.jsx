@@ -10,12 +10,7 @@ class Dialogs extends React.Component {
         backendInterface.axios_.get(backendInterface.session_url + '/chat/' + backendInterface.client_user_id)
             .then((response) => {
                 const response_data = response['data'];
-
                 this.setState({chats: response_data});
-
-                // console.log(this.props.chat);
-                // console.log(this.state);
-                console.log(this.state.chats);
             })
             .catch((error) => {
                 console.log(error);
@@ -34,7 +29,7 @@ class Dialogs extends React.Component {
                             9
                         </div>
                         <h1 className="pl-4 text-4xl font-semibold leading-normal text-gray-900 text-center">
-                            Чаты
+                            ЧёЧаты
                         </h1>
                         <button
                             className="p-4  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">

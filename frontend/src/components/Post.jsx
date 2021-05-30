@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "../components/Header";
 import axios from "./../backendInterface";
 import session_url from "./../backendInterface"
+import Moment from 'react-moment';
 
 class Post extends React.Component{
 
@@ -28,7 +29,9 @@ class Post extends React.Component{
                                         {this.props.firstname + " " + this.props.lastname}
                                     </p>
                                     <p className="text-gray-400 dark:text-gray-300">
-                                        {this.props.timestamp}
+                                        <Moment toNow>
+                                            {this.props.timestamp}
+                                        </Moment>
                                     </p>
                                 </div>
                             </div>

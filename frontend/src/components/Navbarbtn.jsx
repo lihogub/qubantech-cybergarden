@@ -15,17 +15,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden m-auto h-8 w-8"}>
                                 <img src = {profile}/>
                             </div>
-                            Feed
-                        </div>
-                    </Link>
-                </div>
-                <div className="px-4 py-1 w-1/4 md:w-max">
-                    <Link to="/event">
-                        <div className={"text-center"}>
-                            <div className={"md:hidden m-auto h-8 w-8"}>
-                                <img src = {feed} />
-                            </div>
-                           Events
+                            Лента
                         </div>
                     </Link>
                 </div>
@@ -35,7 +25,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden  m-auto h-8 w-8"}>
                                 <img src = {chat}/>
                             </div>
-                            Dialogs
+                            Чаты
                         </div>
                     </Link>
                 </div>
@@ -45,7 +35,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden  m-auto h-8 w-8"}>
                                 <img src = {things}/>
                             </div>
-                        Things
+                        Штуки
                         </div>
                     </Link>
                 </div>
@@ -55,7 +45,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden m-auto h-8 w-8"}>
                                 <img src = {profile}/>
                             </div>
-                            Profile
+                            Профиль
                         </div>
                     </Link>
                 </div>
