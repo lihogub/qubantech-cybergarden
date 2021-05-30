@@ -9,7 +9,6 @@ export default class FollowButton extends React.Component{
         let subscribed = this.props.initialState;
     }
     render() {
-        subscribed = this.props.initialState;
         if (subscribed) {
             return (
                 <button type="button" onClick={this.props.callback}
@@ -17,6 +16,7 @@ export default class FollowButton extends React.Component{
             text-gray-500 w-full transition ease-in duration-200 text-center text-base shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full">
                     <img src={check} onClick={this.props.callback}/>
                 </button>
+
             );
         }
         else{

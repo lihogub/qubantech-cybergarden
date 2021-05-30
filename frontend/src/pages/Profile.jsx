@@ -67,7 +67,16 @@ class Profile extends React.Component {
                                                 <FollowButton initialState={true} callback={"/s"} />
                                             </div>
                                         </div>
-
+                                        <div>
+                                            <div className="bg-white rounded-lg w-72 p-4 m-auto">
+                                                <div className="w-full h-4 bg-gray-400 rounded-full mt-3">
+                                                    <div
+                                                        className="w-2/5 h-full text-center text-xs text-black bg-purple rounded-full">
+                                                        40
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div className="text-sm leading-normal mt-6 mb-2 text-gray-800 font-medium uppercase">
                                             <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
@@ -98,13 +107,13 @@ class Profile extends React.Component {
                                                     </h2>
                                                     <p className="leading-relaxed">Комната</p>
                                                 </div>
-                                                <div className="p-4 sm:w-1/2 w-full">
+                                                <div className="p-4 w-1/2">
                                                     <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                                         {this.state && this.state.profile.room}
                                                     </h2>
                                                     <p className="leading-relaxed">Подписчики</p>
                                                 </div>
-                                                <div className="p-4 sm:w-1/2 w-full">
+                                                <div className="p-4 w-1/2">
                                                     <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                                         {this.state && this.state.profile.room}
                                                     </h2>
