@@ -28,6 +28,7 @@ public class ProductDto {
     private Date timestamp;
     private List<String> images;
     private BigDecimal balance;
+    private BigDecimal price;
 
     public ProductDto(Product product) {
         this.title = product.getTitle();
@@ -38,6 +39,7 @@ public class ProductDto {
         this.avatar = product.getOwner().getAvatar();
         this.timestamp = product.getTimestamp();
         this.balance = product.getOwner().getBalance();
+        this.price = product.getPrice();
         this.images = product
                 .getImages()
                 .stream()

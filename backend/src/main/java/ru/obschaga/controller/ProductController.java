@@ -23,6 +23,8 @@ public class ProductController {
     private final UserRepository userRepository;
     private final ImageRepository imageRepository;
 
+
+    // get current margetplace
     @GetMapping("/{currentUserId}/all")
     ResponseEntity<?> getAllProducts(@PathVariable Long currentUserId) {
         SellingStatus awaitingStatus = statusRepository.getByName("Ожидание");
@@ -34,6 +36,8 @@ public class ProductController {
                 .collect(Collectors.toList())
         );
     }
+
+    // gets user trades
     @GetMapping("/{currentUserId}")
     ResponseEntity<?> getMeProducts(@PathVariable Long currentUserId) {
         User user = userRepository.getById(currentUserId);
@@ -45,8 +49,10 @@ public class ProductController {
                 .collect(Collectors.toList())
         );
     }
+
+    // creates new trade
     @PostMapping("/{currentUserId}")
-    ResponseEntity<?> getMeProducts(@PathVariable Long currentUserId,
+    ResponseEntity<?> getMyTrades(@PathVariable Long currentUserId,
                                     @RequestBody ProductDto productDto) {
         User user = userRepository.getById(currentUserId);
         productDto.setTimestamp(new Date());
@@ -63,6 +69,16 @@ public class ProductController {
                 .owner(user)
                 .build();
         productRepository.save(product);
+        Trade trade = Trade.builder()
+                .sellerApproved(false)
+                .buyerApproved(false)
+                .chat(null)
+                .timestamp(new Date())
+                .product(product)
+                .user(user)
+                .status(statusRepository.getByName("Ожидание"))
+                .build();
+        tradeRepository.save(trade);
         return ResponseEntity.ok().build();
     }
 }
