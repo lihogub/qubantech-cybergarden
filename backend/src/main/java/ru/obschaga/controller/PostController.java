@@ -44,7 +44,8 @@ public class PostController {
                 .forEach(user->feedSet.addAll(postRepository.getPostByAuthorId(user.getId())));
         List<Post> feed = new ArrayList<>(feedSet);
         feed.sort(Comparator.comparing(Post::getTimestamp));
-        return ResponseEntity.ok(feed.stream().map(PostDto::new).collect(Collectors.toList()));
+        List<PostDto> postDtos = feed.stream().map(PostDto::new).collect(Collectors.toList());
+        return ResponseEntity.ok(postDtos);
     }
 
     @PostMapping("/{currentUserId}")

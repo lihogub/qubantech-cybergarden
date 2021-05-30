@@ -39,7 +39,7 @@ public class FollowController {
     ResponseEntity<?> follow(@PathVariable Long currentUserId, @PathVariable Long userId) throws UserNotFoundException {
         User currentUser = userService.getUserById(currentUserId);
         User targetUser = userService.getUserById(userId);
-        if (!currentUser.getFollowing().contains(targetUser)) {
+        if (!currentUserId.equals(userId) && !currentUser.getFollowing().contains(targetUser)) {
             currentUser.getFollowing().add(targetUser);
             targetUser.getFollowers().add(currentUser);
             userRepository.save(currentUser);
@@ -52,7 +52,7 @@ public class FollowController {
     ResponseEntity<?> unfollow(@PathVariable Long currentUserId, @PathVariable Long userId) throws UserNotFoundException {
         User currentUser = userService.getUserById(currentUserId);
         User targetUser = userService.getUserById(userId);
-        if (currentUser.getFollowing().contains(targetUser)) {
+        if (!currentUserId.equals(userId) && currentUser.getFollowing().contains(targetUser)) {
             currentUser.getFollowing().remove(targetUser);
             targetUser.getFollowers().remove(currentUser);
             userRepository.save(currentUser);

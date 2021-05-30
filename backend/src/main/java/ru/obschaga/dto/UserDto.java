@@ -2,6 +2,7 @@ package ru.obschaga.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.obschaga.model.User;
 
 import java.math.BigDecimal;
