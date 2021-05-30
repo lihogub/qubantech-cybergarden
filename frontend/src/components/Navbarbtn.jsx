@@ -15,7 +15,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden m-auto h-8 w-8"}>
                                 <img src = {profile}/>
                             </div>
-                            Feed
+                            Лента
                         </div>
                     </Link>
                 </div>
@@ -35,7 +35,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden  m-auto h-8 w-8"}>
                                 <img src = {chat}/>
                             </div>
-                            Dialogs
+                            Чаты
                         </div>
                     </Link>
                 </div>
@@ -45,7 +45,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden  m-auto h-8 w-8"}>
                                 <img src = {things}/>
                             </div>
-                        Things
+                        ДД
                         </div>
                     </Link>
                 </div>
@@ -55,7 +55,7 @@ export default function Navbarbtn() {
                             <div className={"md:hidden m-auto h-8 w-8"}>
                                 <img src = {profile}/>
                             </div>
-                            Profile
+                            Профиль
                         </div>
                     </Link>
                 </div>
