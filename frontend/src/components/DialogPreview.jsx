@@ -25,7 +25,8 @@ class DialogPreview extends React.Component{
 
     render(){
         return (
-            <Link to={"/dialogs/" + this.props.chatID}>
+            <Link to={"/chat"}>
+            {/*<Link to={"/dialogs/" + this.props.chatID}>*/}
                 <div className="shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4 my-2">
                     <div className="flex flex-col w-10 h-10 justify-center items-center mr-4">
                         <a href="#" className="block relative">

@@ -70,7 +70,16 @@ class Profile extends React.Component {
                                                 <FollowButton initialState={true} callback={"/s"} />
                                             </div>
                                         </div>
-
+                                        <div>
+                                            <div className="bg-white rounded-lg w-72 p-4 m-auto">
+                                                <div className="w-full h-4 bg-gray-400 rounded-full mt-3">
+                                                    <div
+                                                        className="w-2/5 h-full text-center text-xs text-black bg-purple rounded-full">
+                                                        40
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className="text-sm leading-normal mt-6 mb-2 text-gray-800 font-medium uppercase">
                                             <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
                                             Специальность:
@@ -121,7 +130,6 @@ class Profile extends React.Component {
                                                         </h2>
                                                         <p className="leading-relaxed">Подписки</p>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>

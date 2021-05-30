@@ -25,7 +25,7 @@ class Feed extends React.Component{
 
     render(){
         return(
-            <div className='container mx-auto px-4'>
+            <div className='container md:mt-12 mb-10 mx-auto px-4'>
                 {this.state && this.state.feed.map((element)=>{
                     return(
                         <Post
@@ -34,7 +34,7 @@ class Feed extends React.Component{
                             username={element.author}
                             title={element.title}
                             avatar={element.avatar || "https://i.redd.it/v0caqchbtn741.jpg"}
-                            timestamp={element.timestamp}
+                            timestamp={''}
                             text={element.description}
                             images={element.images}
                             likes={element.likes}
