@@ -84,7 +84,7 @@ class Profile extends React.Component {
                                         </div>
                                         <div className="text-sm leading-normal -mt-2 mb-4 text-gray-800 font-medium uppercase">
                                             <i className="fas fa-map-marker-alt mr-2 text-base text-gray-500"></i>{" "}
-                                            Дата рождения: {this.state && this.state.profile['birthday'] || 'не указана'}
+                                            Дата рождения: 29-05-2001
                                         </div>
 
                                         <div className="mt-5 border-t border-gray-300 container px-2 py-10 mx-auto">
