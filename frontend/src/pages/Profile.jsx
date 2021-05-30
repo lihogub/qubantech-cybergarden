@@ -43,11 +43,13 @@ class Profile extends React.Component {
                                         <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                                             <div className="relative">
                                                 <a href="#" className="block relative">
-                                                    {this.state && this.state.profile['avatar']
-                                                    && `<img alt="profil" src="${this.state.profile['avatar']}"
-                                                         className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>`
-                                                    || <img alt="profil" src="https://i.redd.it/v0caqchbtn741.jpg"
-                                                         className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>}
+                                                    {/*{*/}
+                                                    {/*    this.state */}
+                                                    {/*    && this.state.profile.avatar*/}
+                                                    {/*    && `<img alt="profil" src="${this.state.profile.avatar}" className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>`*/}
+                                                    {/*    || <img alt="profil" src="https://i.redd.it/v0caqchbtn741.jpg" className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>*/}
+                                                    {/*}*/}
+                                                    <img alt="profil" src="https://i.redd.it/v0caqchbtn741.jpg" className="mx-auto object-cover rounded-lg h-28 w-28 md:h-40 md:w-40 -m-10"/>
                                                 </a>
                                             </div>
                                         </div>
