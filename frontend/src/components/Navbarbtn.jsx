@@ -10,6 +10,16 @@ export default function Navbarbtn() {
         <>
             <div className={"flex justify-center justify-self-center w-full md:mx-8"}>
                 <div className="px-4 py-1 w-1/4 md:w-max">
+                    <Link to="/feed">
+                        <div className={"text-center"}>
+                            <div className={"md:hidden m-auto h-8 w-8"}>
+                                <img src = {profile}/>
+                            </div>
+                            Feed
+                        </div>
+                    </Link>
+                </div>
+                <div className="px-4 py-1 w-1/4 md:w-max">
                     <Link to="/event">
                         <div className={"text-center"}>
                             <div className={"md:hidden m-auto h-8 w-8"}>

@@ -1,7 +1,6 @@
 package ru.obschaga.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AccountStatusException;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

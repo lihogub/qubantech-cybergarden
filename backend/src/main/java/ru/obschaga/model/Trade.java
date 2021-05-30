@@ -13,14 +13,19 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Message {
+public class Trade {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Product product;
     private Date timestamp;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User author;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    private SellingStatus status;
+    @OneToOne
     private Chat chat;
-    private String text;
+    private Boolean sellerApproved;
+    private Boolean buyerApproved;
 }
