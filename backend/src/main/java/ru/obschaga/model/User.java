@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class User {
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
+    private BigDecimal balance;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "chat_usr",
@@ -48,6 +50,13 @@ public class User {
             joinColumns = {@JoinColumn(name = "following_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
     private List<User> followers;
+
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_imsg",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "imsg_id", referencedColumnName = "id")})
+    private List<Message> importantMessages;
 
     public User(User user) {
         this.id = user.id;

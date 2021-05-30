@@ -6,21 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Comment {
+@AllArgsConstructor
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(columnDefinition = "boolean default false")
-    private Boolean anonymous;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User author;
-    private String text;
+    private String title;
+    private String description;
+    @ManyToOne
+    private User owner;
     private Date timestamp;
+    @OneToMany
+    private List<Image> images;
+    private BigDecimal price;
 }

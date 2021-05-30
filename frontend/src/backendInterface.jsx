@@ -1,10 +1,7 @@
 import axios from 'axios'
 
-const axios_ = require('axios');
-
-let username = "ivanov";
-let password = "ivanovpass";
-
-let session_url = "http://192.168.1.152:8080";
-
-export default axios_;
+export default {
+    axios_: require('axios'),
+    session_url: "http://192.168.1.152:8080",
+    client_user_id: 2
+};

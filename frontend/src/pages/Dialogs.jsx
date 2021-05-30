@@ -3,9 +3,6 @@ import Header from "../components/Header";
 import itemDialog from "../components/itemDialog";
 import icon from "../icon/plus_dialogs.svg";
 
-const axios = require('axios');
-let user_id = 1;
-
 class Dialogs extends React.Component {
     componentDidMount() {
 
@@ -27,9 +24,7 @@ class Dialogs extends React.Component {
     return (
         <>
             <main className="dialogs-page">
-                <div
-                    className="absolute z-0 top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."
-                ></div>
+                <div className="absolute z-0 top-0 w-full h-full bg-gradient-to-b bg-gradient-to-b from-purple ..."></div>
                 <div className="relative container mx-auto px-4 z-1 flex flex-col">
                     <div className="flex justify-center mb-8">
                         <div className="pt-1 text-center w-14 w-14 text-4xl font-semibold rounded-full border-2 border-gray-900 focus:outline-none border-red text-red">
@@ -78,9 +73,6 @@ class Dialogs extends React.Component {
                                 </button>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </main>

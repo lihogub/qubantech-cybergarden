@@ -33,4 +33,9 @@ public class Post {
             joinColumns = {@JoinColumn(name = "post_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
     private List<User> likes;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "post_comment",
+            joinColumns = {@JoinColumn(name = "post_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "comment_id", referencedColumnName = "id")})
+    private List<Comment> comments;
 }
