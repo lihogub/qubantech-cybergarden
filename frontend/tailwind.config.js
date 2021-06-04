@@ -33,6 +33,9 @@ module.exports = {
       },
       white:{
         DEFAULT: '#FFFFFF',
+      },
+      red: {
+        DEFAULT: '#940317'
       }
     },
     extend: {},
